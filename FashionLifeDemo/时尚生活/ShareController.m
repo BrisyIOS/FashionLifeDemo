@@ -13,9 +13,8 @@
 #import "detailTarentoModel.h"
 #import "ShareCommentViewController.h"
 #import "MJRefresh.h"
-#import "CommonActivityIndicatorView.h"
+
 @interface ShareController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
-@property (nonatomic,strong) CommonActivityIndicatorView *activityView;
 @property(nonatomic, strong)UICollectionView *collectionView;
 
 @property(nonatomic, strong)NSMutableArray *modelArray;
@@ -68,15 +67,13 @@ int numberRowShare = 0;
     [self.collectionView addLegendHeaderWithRefreshingTarget:self refreshingAction:@selector(headerAction)];
     [self.collectionView addLegendFooterWithRefreshingTarget:self refreshingAction:@selector(footerAction)];
     
-    self.activityView = [[CommonActivityIndicatorView alloc] init];
-    [self.view addSubview:_activityView];
+    [MBProgressHUD showMessage:@"loading..." toView:self.view];
     
 }
 
 - (void)headerAction
 {
-    self.activityView = [[CommonActivityIndicatorView  alloc] init];
-    [self.view addSubview:_activityView];
+    [MBProgressHUD showMessage:@"loading..." toView:self.view];
     
     numberShare = 1;
     NSArray *array = @[@"100", @"1", @"2", @"20", @"3", @"4", @"5", @"7", @"10", @"9", @"23", @"8", @"15"];
@@ -214,7 +211,7 @@ int numberRowShare = 0;
         }
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.collectionView reloadData];
-            [self.activityView endCommonActivity];
+            [MBProgressHUD hideHUDForView:self.view];
         });
         
     }]resume];

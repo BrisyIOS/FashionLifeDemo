@@ -15,14 +15,14 @@
 #import "UIImageView+WebCache.h"
 #import "MJRefresh.h"
 #import "ShowTarentoViewController.h"
-#import "CommonActivityIndicatorView.h"
+
 @interface ShopController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,ShopDetailviewDelegate>
 @property (nonatomic,strong) UICollectionView *collectionView;
 @property (nonatomic,strong) NSMutableArray *shopArray;
 @property (nonatomic,strong) ShopDetailView *shopDetailView;
 @property (nonatomic,strong) UIImageView *brandImageview;
 @property (nonatomic,assign) int page;
-@property (nonatomic,strong) CommonActivityIndicatorView *activityView;
+
 
 @end
 
@@ -109,6 +109,9 @@
     // 注册cell
     [self.collectionView registerClass:[ShopCell class] forCellWithReuseIdentifier:@"shopcell"];
     
+    [MBProgressHUD showMessage:@"loading..." toView:self.view];
+
+    
     
     // 加载数据
     [self setDataWithURL:self.url];
@@ -117,8 +120,7 @@
     // 上拉刷新
     __weak typeof(self) BlockSelf = self;
     [self.collectionView addLegendHeaderWithRefreshingBlock:^{
-        BlockSelf.activityView = [[CommonActivityIndicatorView alloc] init];
-        [BlockSelf.view addSubview:BlockSelf.activityView];
+        [MBProgressHUD showMessage:@"loading..." toView:BlockSelf.view];
         BlockSelf.page = 1;
         BlockSelf.shopArray = [NSMutableArray array];
         [BlockSelf setDataWithURL:BlockSelf.url];
@@ -140,8 +142,6 @@
     }];
 
     
-    self.activityView = [[CommonActivityIndicatorView alloc] init];
-    [self.view addSubview:_activityView];
     
 }
 
@@ -175,7 +175,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             
             [self.collectionView reloadData];
-            [self.activityView endCommonActivity];
+            [MBProgressHUD hideHUDForView:self.view];
         });
     }] resume];
 }

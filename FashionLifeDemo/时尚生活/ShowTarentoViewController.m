@@ -9,10 +9,10 @@
 #import "ShowTarentoViewController.h"
 #import "ShowTarentoTableViewCell.h"
 #import "ShowTarentoModel.h"
-#import "CommonActivityIndicatorView.h"
+
 
 @interface ShowTarentoViewController ()<UITableViewDelegate, UITableViewDataSource>
-@property (nonatomic,strong) CommonActivityIndicatorView *activityView;
+
 
 @property (nonatomic, strong)UITableView *tableView;
 
@@ -47,8 +47,7 @@
     [self.view addSubview:_tableView];
     
     
-    self.activityView = [[CommonActivityIndicatorView alloc] init];
-    [self.view addSubview:_activityView];
+    [MBProgressHUD showMessage:@"loading..." toView:self.view];
     
     if (_detailModel.goods_id.length == 0) {
         self.UrlString = [NSString stringWithFormat:@"http://app.iliangcang.com/goods?app_key=Android&build=2015112301&goods_id=%@&v=1.0", _modelString];
@@ -74,7 +73,7 @@
    
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
-            [self.activityView endCommonActivity];
+            [MBProgressHUD hideHUDForView:self.view];
         });
     }] resume];
     

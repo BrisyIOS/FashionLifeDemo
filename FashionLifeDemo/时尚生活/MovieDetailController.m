@@ -13,7 +13,7 @@
 #import "MovieResumViewController.h"
 #import "AppDelegate.h"
 #import "UMSocial.h"
-#import "CommonActivityIndicatorView.h"
+
 @interface MovieDetailController ()<UITableViewDataSource, UITableViewDelegate, UMSocialUIDelegate, UMSocialDataDelegate>
 
 @property(nonatomic, strong)UITableView *tableView;
@@ -53,8 +53,7 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction:)];
     [tapView addGestureRecognizer:tap];
     
-    CommonActivityIndicatorView *activityView = [[CommonActivityIndicatorView alloc] init];
-    [self.view addSubview:activityView];
+    [MBProgressHUD showMessage:@"loading..." toView:self.view];
     
 }
 

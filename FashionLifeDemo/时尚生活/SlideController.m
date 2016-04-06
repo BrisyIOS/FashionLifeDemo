@@ -7,10 +7,10 @@
 //
 
 #import "SlideController.h"
-#import "CommonActivityIndicatorView.h"
+
 
 @interface SlideController ()<UIWebViewDelegate>
-@property (nonatomic,strong) CommonActivityIndicatorView *activityView;
+
 
 @end
 
@@ -37,15 +37,13 @@
     [web loadRequest:request];
      [self.view addSubview:web];
     
-    self.activityView = [[CommonActivityIndicatorView alloc] init];
-    [self.view addSubview:self.activityView];
-    
+    [MBProgressHUD showMessage:@"loading..." toView:self.view];
 }
 
 
 #pragma mark - 加载完毕停掉菊花
 - (void)webViewDidFinishLoad:(UIWebView *)webView{
-    [self.activityView endCommonActivity];
+    [MBProgressHUD hideHUDForView:self.view];
 }
 
 

@@ -16,9 +16,8 @@
 #import "ShowTarentoViewController.h"
 #import "ShareCommentViewController.h"
 #import "MJRefresh.h"
-#import "CommonActivityIndicatorView.h"
+
 @interface DetailTarentoViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
-@property (nonatomic,strong) CommonActivityIndicatorView *activityView;
 @property(nonatomic, strong)UICollectionView *collectiomView;
 @property(nonatomic, strong)NSMutableArray *followingArray;
 @property(nonatomic, strong)NSMutableArray *countArray;
@@ -88,8 +87,7 @@ int detailNumber = 1;
     [self.collectiomView addLegendFooterWithRefreshingTarget:self refreshingAction:@selector(footerAction)];
     
 
-    self.activityView = [[CommonActivityIndicatorView alloc] init];
-    [self.view addSubview:_activityView];
+    [MBProgressHUD showMessage:@"loading..." toView:self.view];
 }
 
 - (void)headerAction
@@ -295,7 +293,7 @@ int detailNumber = 1;
         }
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.collectiomView reloadData];
-            [self.activityView endCommonActivity];
+           [MBProgressHUD hideHUDForView:self.view];
         });
     }]resume];
     

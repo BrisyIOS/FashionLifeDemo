@@ -1,0 +1,15 @@
+//
+//  FashionLife-PrefixHeader.pch
+//  时尚生活
+//
+//  Created by zhangxu on 16/4/6.
+//  Copyright © 2016年 FashionLife. All rights reserved.
+//
+
+#ifndef FashionLife_PrefixHeader_pch
+#define FashionLife_PrefixHeader_pch
+#import "MBProgressHUD+MJ.h"
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* FashionLife_PrefixHeader_pch */

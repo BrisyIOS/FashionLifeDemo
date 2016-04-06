@@ -175,7 +175,9 @@
 		8B16F09E1C0C9C4700B64152 /* launchScreen_05.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B16F0971C0C9C4700B64152 /* launchScreen_05.png */; };
 		8B16F09F1C0C9C4700B64152 /* launchScreen_06.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B16F0981C0C9C4700B64152 /* launchScreen_06.png */; };
 		8B16F0A01C0C9C4700B64152 /* launchScreen_07.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B16F0991C0C9C4700B64152 /* launchScreen_07.png */; };
-		8B181AFF1C0E9AE400D794A5 /* CommonActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B181AFE1C0E9AE400D794A5 /* CommonActivityIndicatorView.m */; };
+		8B1745781CB5122B003B77EC /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B1745741CB5122B003B77EC /* MBProgressHUD+MJ.m */; };
+		8B1745791CB5122B003B77EC /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8B1745751CB5122B003B77EC /* MBProgressHUD.bundle */; };
+		8B17457A1CB5122B003B77EC /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B1745771CB5122B003B77EC /* MBProgressHUD.m */; };
 		8B573D841C0AF1D90029BDDD /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B573D831C0AF1D90029BDDD /* user.png */; };
 		8B573D861C0AF2C00029BDDD /* offline.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B573D851C0AF2C00029BDDD /* offline.png */; };
 		8B5961BC1C07E1CB00DB19C0 /* ShopDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B5961BB1C07E1CB00DB19C0 /* ShopDetailView.m */; };
@@ -522,8 +524,12 @@
 		8B16F0971C0C9C4700B64152 /* launchScreen_05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchScreen_05.png; sourceTree = "<group>"; };
 		8B16F0981C0C9C4700B64152 /* launchScreen_06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchScreen_06.png; sourceTree = "<group>"; };
 		8B16F0991C0C9C4700B64152 /* launchScreen_07.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchScreen_07.png; sourceTree = "<group>"; };
-		8B181AFD1C0E9AE400D794A5 /* CommonActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonActivityIndicatorView.h; sourceTree = "<group>"; };
-		8B181AFE1C0E9AE400D794A5 /* CommonActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonActivityIndicatorView.m; sourceTree = "<group>"; };
+		8B1745731CB5122B003B77EC /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
+		8B1745741CB5122B003B77EC /* MBProgressHUD+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MJ.m"; sourceTree = "<group>"; };
+		8B1745751CB5122B003B77EC /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
+		8B1745761CB5122B003B77EC /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		8B1745771CB5122B003B77EC /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		8B17457C1CB5129A003B77EC /* FashionLife-PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FashionLife-PrefixHeader.pch"; sourceTree = "<group>"; };
 		8B573D7C1C0AD89D0029BDDD /* shopCover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shopCover.png; sourceTree = "<group>"; };
 		8B573D831C0AF1D90029BDDD /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
 		8B573D851C0AF2C00029BDDD /* offline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = offline.png; sourceTree = "<group>"; };
@@ -1012,8 +1018,8 @@
 				8BEEBF051C05B1D7008A0CF9 /* FashionTabBarController.m */,
 				8BEEBF071C05B228008A0CF9 /* FashionNavController.h */,
 				8BEEBF081C05B228008A0CF9 /* FashionNavController.m */,
+				8B1745721CB5122B003B77EC /* MBProgressHUD */,
 				8B16F03D1C0C344000B64152 /* 判断网络 */,
-				8B16F02E1C0C272B00B64152 /* Loading */,
 				796795691C0B1ABE0058DF3E /* SaveAndDownload */,
 				796795221C0B1AAE0058DF3E /* PicTarento */,
 				8B10F60E1C09527B000F3AAD /* 搜索 */,
@@ -1032,6 +1038,7 @@
 			children = (
 				79D5E4791C05AFAA00079374 /* Info.plist */,
 				79D5E47A1C05AFAA00079374 /* main.m */,
+				8B17457C1CB5129A003B77EC /* FashionLife-PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1228,15 +1235,6 @@
 			path = "分享";
 			sourceTree = "<group>";
 		};
-		8B16F02E1C0C272B00B64152 /* Loading */ = {
-			isa = PBXGroup;
-			children = (
-				8B181AFD1C0E9AE400D794A5 /* CommonActivityIndicatorView.h */,
-				8B181AFE1C0E9AE400D794A5 /* CommonActivityIndicatorView.m */,
-			);
-			name = Loading;
-			sourceTree = "<group>";
-		};
 		8B16F0331C0C33E600B64152 /* Reachability */ = {
 			isa = PBXGroup;
 			children = (
@@ -1272,6 +1270,18 @@
 				8B16F0991C0C9C4700B64152 /* launchScreen_07.png */,
 			);
 			path = launchScreen1;
+			sourceTree = "<group>";
+		};
+		8B1745721CB5122B003B77EC /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				8B1745731CB5122B003B77EC /* MBProgressHUD+MJ.h */,
+				8B1745741CB5122B003B77EC /* MBProgressHUD+MJ.m */,
+				8B1745751CB5122B003B77EC /* MBProgressHUD.bundle */,
+				8B1745761CB5122B003B77EC /* MBProgressHUD.h */,
+				8B1745771CB5122B003B77EC /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
 		8B5961B81C07E19A00DB19C0 /* 分类详情 */ = {
@@ -1879,6 +1889,7 @@
 				796795471C0B1AAE0058DF3E /* arrow_38.4px_1155135_easyicon.net.png in Resources */,
 				7967954A1C0B1AAE0058DF3E /* Calendar_64px_1194552_easyicon.net.png in Resources */,
 				79BE2DC71C0E9580002F31C7 /* iconfont-shipin_10.png in Resources */,
+				8B1745791CB5122B003B77EC /* MBProgressHUD.bundle in Resources */,
 				8B10F63C1C09AFEC000F3AAD /* weixin.png in Resources */,
 				8B16F09D1C0C9C4700B64152 /* launchScreen_04.png in Resources */,
 				8B10F63B1C09AFEC000F3AAD /* weibo.png in Resources */,
@@ -1953,6 +1964,7 @@
 				8B10F6181C095407000F3AAD /* SearchModel.m in Sources */,
 				8B10AF931C06F25200418799 /* SlideController.m in Sources */,
 				796794FA1C0B19D40058DF3E /* DownloadMovieTableViewCell.m in Sources */,
+				8B17457A1CB5122B003B77EC /* MBProgressHUD.m in Sources */,
 				8BEEBFA41C05C858008A0CF9 /* UIView+WebCacheOperation.m in Sources */,
 				79C2C4161C0B17010024BD3F /* LeftShareViewController.m in Sources */,
 				8B5961C81C085D1E00DB19C0 /* NavigaView.m in Sources */,
@@ -1993,7 +2005,6 @@
 				79C2C3D11C0B159E0024BD3F /* MagazineCell.m in Sources */,
 				79171DC71C0D9284003C82C7 /* AVMoviePlayer.m in Sources */,
 				796795831C0B1B090058DF3E /* DownloadManagentFinish.m in Sources */,
-				8B181AFF1C0E9AE400D794A5 /* CommonActivityIndicatorView.m in Sources */,
 				796795801C0B1B090058DF3E /* DBCacheSqlite.m in Sources */,
 				79C2C4101C0B16F10024BD3F /* ShareLeftModel.m in Sources */,
 				8BEEBFA21C05C858008A0CF9 /* UIImageView+HighlightedWebCache.m in Sources */,
@@ -2015,6 +2026,7 @@
 				8B5961ED1C0891EA00DB19C0 /* MJRefreshConst.m in Sources */,
 				796795201C0B1A6C0058DF3E /* MMDrawerVisualState.m in Sources */,
 				796795141C0B1A300058DF3E /* MovieModel.m in Sources */,
+				8B1745781CB5122B003B77EC /* MBProgressHUD+MJ.m in Sources */,
 				796F115F1C0D408300A7E8A1 /* ShowTarentoTableViewCell.m in Sources */,
 				8BEEBF9B1C05C858008A0CF9 /* SDWebImageManager+MJ.m in Sources */,
 				79C2C4291C0B17580024BD3F /* DetailTarentoReusableView.m in Sources */,
@@ -2184,6 +2196,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/时尚生活/FashionLife-PrefixHeader.pch";
 				INFOPLIST_FILE = "时尚生活/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2211,6 +2225,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/时尚生活/FashionLife-PrefixHeader.pch";
 				INFOPLIST_FILE = "时尚生活/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

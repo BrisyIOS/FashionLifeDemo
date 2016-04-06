@@ -13,7 +13,6 @@
 #import "TarentoModel.h"
 #import "DetailTarentoViewController.h"
 #import "MJRefresh.h"
-#import "CommonActivityIndicatorView.h"
 @interface TarentoController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 @property(nonatomic, strong)UICollectionView *collectionView;
@@ -24,7 +23,6 @@
 
 @property(nonatomic, assign)BOOL isRefresh;
 
-@property (nonatomic,strong) CommonActivityIndicatorView *activityView;
 
 @end
 int number = 1;
@@ -72,8 +70,7 @@ int numberRowStay = 0;
     [self.collectionView addLegendHeaderWithRefreshingTarget:self refreshingAction:@selector(headerAction)];
     [self.collectionView addLegendFooterWithRefreshingTarget:self refreshingAction:@selector(footerAction)];
     
-    self.activityView = [[CommonActivityIndicatorView alloc] init];
-    [self.view addSubview:_activityView];
+    [MBProgressHUD showMessage:@"loading..." toView:self.view];
     
 }
 
@@ -269,7 +266,7 @@ int numberRowStay = 0;
         }
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.collectionView reloadData];
-            [self.activityView endCommonActivity];
+            [MBProgressHUD hideHUDForView:self.view];
         });
         
     }]resume];

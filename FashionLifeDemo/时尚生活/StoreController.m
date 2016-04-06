@@ -15,7 +15,7 @@
 #import "ShopController.h"
 #import "NavigaView.h"
 #import "NavigaCell.h"
-#import "CommonActivityIndicatorView.h"
+
 
 @interface StoreController ()<UIScrollViewDelegate,HomeViewDelegate,CategoryViewDelegate,SpecialViewDelegte,NavigaViewDelegate>
 @property (nonatomic,strong) UIScrollView *scrollview;

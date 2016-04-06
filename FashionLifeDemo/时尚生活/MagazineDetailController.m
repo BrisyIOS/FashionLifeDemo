@@ -38,6 +38,7 @@ static NSString *itemIdentifier = @"item";
     // 创建下面的View
     [self creatDownView];
     
+    
     if (self.isAuthor) {
         [self createTableView];
         self.isAuthor = NO;

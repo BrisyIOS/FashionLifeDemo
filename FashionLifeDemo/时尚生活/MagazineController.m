@@ -14,7 +14,7 @@
 #import "MagazineWebController.h"
 #import "Header.h"
 #import "DIYButton.h"
-#import "CommonActivityIndicatorView.h"
+
 
 @interface MagazineController ()
 
@@ -25,7 +25,7 @@
 @property (nonatomic, strong) UIView *myView;
 @property (nonatomic, strong) NSString *authorStr;
 @property (nonatomic, strong) NSString *nowUrl;
-@property (nonatomic,strong) CommonActivityIndicatorView *activityView;
+
 
 @end
 
@@ -53,8 +53,7 @@ static NSString *cellIdentifier = @"cell";
     // 注册header
     [self.tableView registerClass:[MagezineHeader class] forHeaderFooterViewReuseIdentifier:@"header"];
     
-    self.activityView = [[CommonActivityIndicatorView alloc] init];
-    [self.view addSubview:_activityView];
+    [MBProgressHUD hideHUDForView:self.view];
 }
 #pragma mark -- 创建label和Button --
 - (void)createLabelAndButton
@@ -159,7 +158,7 @@ static NSString *cellIdentifier = @"cell";
         dispatch_async(dispatch_get_main_queue(), ^{
             // 回到主线程刷新UI
             [self.tableView reloadData];
-            [self.activityView endCommonActivity];
+            [MBProgressHUD hideHUDForView:self.view];
         });
     }];
     [dataTask resume];

@@ -13,12 +13,11 @@
 #import "ThreeCell.h"
 #import "FourCell.h"
 #import "MJRefresh.h"
-#import "CommonActivityIndicatorView.h"
 
 @interface HomeView ()<UITableViewDataSource,UITableViewDelegate,OneCellDelegate,TwoCellDelegate,FourCellDelegate>
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray *storeArray;
-@property (nonatomic,strong) CommonActivityIndicatorView *activityView;
+
 
 @end
 
@@ -54,8 +53,7 @@
         // 上拉刷新
         __weak typeof(self) BlockSelf = self;
         [self.tableView addLegendHeaderWithRefreshingBlock:^{
-            BlockSelf.activityView = [[CommonActivityIndicatorView alloc] init];
-            [BlockSelf addSubview:BlockSelf.activityView];
+            [MBProgressHUD showMessage:@"loading..." toView:BlockSelf];
             BlockSelf.storeArray = [NSMutableArray array];
             [BlockSelf setDataWithURL:kFirstUrl];
             [BlockSelf.tableView reloadData];
@@ -115,7 +113,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             
             [self.tableView reloadData];
-            [self.activityView endCommonActivity];
+            [MBProgressHUD hideHUDForView:self];
         });
         
     }] resume];

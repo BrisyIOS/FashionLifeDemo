@@ -13,7 +13,6 @@
 #import "MovieDetailController.h"
 #import "MJRefresh.h"
 #import "MovieLeftViewController.h"
-#import "CommonActivityIndicatorView.h"
 
 @interface MovieViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -60,8 +59,7 @@ NSInteger numberRefresh = 1;
         [self getPostRequestUrlChannel:i];
     }
     
-    CommonActivityIndicatorView *activityView = [[CommonActivityIndicatorView alloc] init];
-    [self.view addSubview:activityView];
+    [MBProgressHUD showMessage:@"loading..." toView:self.view];
     
     
 }
