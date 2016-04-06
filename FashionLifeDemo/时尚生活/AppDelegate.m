@@ -64,15 +64,23 @@
     return  [UMSocialSnsService handleOpenURL:url];
 }
 
-
+#pragma mark - 强制竖屏
 - (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
 {
-    if (self.isRotation) {
-        return UIInterfaceOrientationMaskLandscape;
-    }else
-    {
-        return UIInterfaceOrientationMaskPortrait;
-    }
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+
+
+// 接收到内存警告的时候调用
+- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application
+{
+    
+    // 停止所有的下载
+    [[SDWebImageManager sharedManager] cancelAll];
+    // 删除缓存
+    [[SDWebImageManager sharedManager].imageCache clearMemory];
+    
 }
 
 
