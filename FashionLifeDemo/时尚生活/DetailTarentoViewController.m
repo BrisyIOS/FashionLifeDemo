@@ -80,6 +80,7 @@ int detailNumber = 1;
     _number = 200;
     
     NSString *UrlString = [NSString stringWithFormat:@"http://app.iliangcang.com/user/recommendation?app_key=Android&build=2015110402&count=18&owner_id=%@&page=1&v=1.0", _tarentoModel.user_id];
+   
     [self sessionDataTaskWithURLString:UrlString];
     
     
@@ -109,6 +110,8 @@ int detailNumber = 1;
     if (_number == 400) {
         detailNumber++;
         NSString *UrlString = [NSString stringWithFormat:@"http://app.iliangcang.com/user/followed?app_key=Android&build=2015110402&count=18&owner_id=%@&page=%d&v=1.0", _tarentoModel.user_id, detailNumber];
+        
+        
         [self sessionDataTaskWithURLString:UrlString];
     }
     
@@ -209,6 +212,7 @@ int detailNumber = 1;
         
         detailTarentoModel *model = _followingArray[indexPath.row];
         showCommentViewVc.detailModel = model;
+        
         [self.navigationController pushViewController:showCommentViewVc animated:YES];
     }
     else

@@ -87,7 +87,7 @@ static NSString *cellIdentifier = @"cell";
     } else {
         
         // 创建label
-        self.todayLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 60, 30)];
+        self.todayLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
         self.todayLabel.textAlignment = NSTextAlignmentLeft;
         UIBarButtonItem *labelBar = [[UIBarButtonItem alloc] initWithCustomView:self.todayLabel];
         self.navigationItem.leftBarButtonItem = labelBar;
@@ -103,6 +103,7 @@ static NSString *cellIdentifier = @"cell";
     [self.titleBtn addTarget:self action:@selector(buttonAction) forControlEvents:UIControlEventTouchUpInside];
     [self.myView addSubview:self.titleBtn];
     self.navigationItem.titleView = self.myView;
+   
 }
 #pragma mark -- 返回到杂志首页 --
 - (void)backBtn:(UIButton *)btn

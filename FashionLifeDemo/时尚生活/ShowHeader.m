@@ -51,7 +51,7 @@
         self.myImageView.layer.masksToBounds = YES;
         [self.contentView addSubview:_myImageView];
         
-        self.lostLabel = [[UILabel alloc]initWithFrame:CGRectMake(70, kScreenWidth + 20 + 40 + 40, kScreenWidth - 70, 40)];
+        self.lostLabel = [[UILabel alloc]initWithFrame:CGRectMake(20, kScreenWidth + 20 + 40 + 40, kScreenWidth - 70, 40)];
         self.lostLabel.textColor = [UIColor whiteColor];
         self.lostLabel.font = [UIFont boldSystemFontOfSize:16];
         [self.contentView addSubview:_lostLabel];
@@ -147,7 +147,8 @@
         i++;
     }
     self.describeLabel.text = _showModel.goods_desc;
-    self.lostLabel.text = [NSString stringWithFormat:@"%@  推荐",_showModel.owner_name];
+//    self.lostLabel.text = [NSString stringWithFormat:@"%@  推荐",_showModel.owner_name];
+    self.lostLabel.text = @"推荐";
     [self.myImageView sd_setImageWithURL:[NSURL URLWithString:_showModel.owner_image]];
     self.goodLabel.text = _showModel.goods_name;
     self.page.numberOfPages = _showModel.images_item.count;

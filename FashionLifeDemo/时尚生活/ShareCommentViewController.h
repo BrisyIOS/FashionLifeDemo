@@ -11,5 +11,4 @@
 @interface ShareCommentViewController : UIViewController
 
 @property(nonatomic, strong)detailTarentoModel *detailModel;
-
 @end

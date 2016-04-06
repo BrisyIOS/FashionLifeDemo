@@ -84,7 +84,7 @@ int numberComment = 1;
     
     [self getSessionDataTaskWithURLString:UrlStringComment];
 
-   
+    
     [[[NSURLSession sharedSession]dataTaskWithURL:[NSURL URLWithString:_UrlString] completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (data == nil) {
             return ;
@@ -95,7 +95,10 @@ int numberComment = 1;
         self.showModel = [[ShowTarentoModel alloc]init];
         
         [self.showModel setValuesForKeysWithDictionary:dataDic];
-        
+        if (self.showModel.images_item == nil) {
+            self.showModel.images_item = [NSMutableArray array];
+            [self.showModel.images_item addObject:self.detailModel.goods_image];
+        }
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
         });
@@ -104,8 +107,6 @@ int numberComment = 1;
     
     [self.tableView addLegendHeaderWithRefreshingTarget:self refreshingAction:@selector(headerAction)];
     [self.tableView addLegendFooterWithRefreshingTarget:self refreshingAction:@selector(footerAction)];
-    
-    
 }
 
 - (void)headerAction
@@ -198,6 +199,7 @@ int numberComment = 1;
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     ShowHeader *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"header"];
+    
     headerView.number = _showModel.images_item.count;
     headerView.showModel = _showModel;
     headerView.detailModel = _detailModel;
